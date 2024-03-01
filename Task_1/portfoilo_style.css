@@ -1,0 +1,336 @@
+/* Reset some default styles */
+body, h1, p {
+  margin: 0;
+  padding: 5;
+}
+/* Style the header */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;;
+  background-color:  #d48cf6;
+  color: hsl(0, 19%, 95%);
+}
+.logo img {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+}
+.intro h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.intro p {
+  font-size: 16px;
+}
+/* Add these styles to your existing CSS */
+#navMenu {
+  display: flexbox;
+  position: absolute;
+  top: 70px; /* Adjust to position the menu properly */
+  right: 120px;
+  background-color: hsl(45, 17%, 95%);
+  padding: 5px;
+  border-radius: 15px;
+}
+#navMenu ul {
+  list-style: square;
+  padding: 5;
+}
+#navMenu li {
+  margin-right: 10px;
+}
+#navMenu a {
+  text-decoration: rgb(236, 11, 124);
+  color: hwb(180 5% 95%);
+  font-size: 18px;
+}
+/* Style the button */
+#toggleButton {
+  background-color: hsl(0, 0%, 100%);
+  color: hwb(0 4% 4%);
+  border: rgb(204, 0, 255);
+  padding: 15px 10px;
+  cursor: pointer;
+}
+/* Update the shape of the "About Me" image to a square and add space between image and content */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  background-color: hsl(316, 39%, 90%);
+}
+.about-image img {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(18, 231, 160, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.about-image img:hover {
+  transform: scale(1.1);
+}
+.about-content {
+  max-width: 600px;
+  text-align: left;
+  margin-left: 20px;
+  flex: 1; /* Allow the content to take up remaining space */
+}
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #0116f7;
+}
+.about-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: hsl(0, 0%, 4%);
+}
+/* Animation for the "About Me" header */
+.about-content h2::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #3498db;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.about-content h2:hover::after {
+  transform: scaleX(1);
+}
+
+/* ... (rest of your CSS) ... */
+.skills {
+  padding: 100px 0;
+  text-align: center;
+  background-color: #f3e9f2;
+}
+.skills h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: hsl(12, 100%, 50%);
+}
+.skill-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.skill {
+  width: 150px;
+  padding: 20px;
+  background-color: hsl(0, 0%, 0%);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.skill:hover {
+  transform: translateY(-5px);
+}
+.skill-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: hsl(0, 100%, 50%);
+}
+.skill-level {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.skill-level-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #0000ff;
+  border-radius: 5px;
+  animation: fillSkillLevelBar 4s ease-in-out forwards;
+}
+@keyframes fillSkillLevelBar {
+  from {
+      width: 0;
+  }
+}
+
+/* Add these styles to your existing CSS */
+.projects {
+  padding: 100px 0;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.projects h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+/* Update these styles to your existing CSS */
+.project-container {
+  display: flex;
+  justify-content: center; /* Align projects to the center */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  margin-top: 40px;
+}
+.project {
+  flex: 0 0 calc(50% - 10px); /* Adjust the width calculation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Decrease the gap between project elements */
+  transition: transform 0.3s ease-in-out;
+  max-width: 400px;
+  white-space: normal;
+}
+.project-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.project-image img:hover {
+  transform: scale(1.05);
+}
+.project:hover {
+  transform: translateY(-5px);
+}
+.project-details {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-left: 20px;
+}
+.project-details h3 {
+  font-size: 24px;
+  margin-top: 0;
+  color: #333;
+}
+.project-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+/* Add these styles to your existing CSS */
+.resume {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.resume h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+.resume p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.resume-link {
+  display: inline-block;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.resume-link:hover {
+  background-color: #000000;
+}
+.resume-link:active {
+  background-color: #777;
+  transform: translateY(1px);
+}
+.resume-link::after {
+  content: "\2193"; /* Down arrow Unicode character */
+  font-size: 18px;
+  margin-left: 10px;
+}
+.resume-link:hover::after {
+  transform: translateY(-1px);
+}
+/* Update or add these styles to your existing CSS */
+.contact {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+.contact p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+.contact-icon {
+  font-size: 24px;
+  color: #333;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.contact-list a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.contact-list a:hover {
+  color: #555;
+}
+
+.footer {
+  background-color: #d48cf6;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.footer p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.footer-links li {
+  margin: 0 10px;
+}
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
+}
+.footer-links a:hover {
+  color: #000000;
+}
